@@ -10,19 +10,12 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'kien/ctrlp.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-endwise'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tyru/open-browser.vim'
-Plugin 'tpope/vim-rails'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'leafgarland/typescript-vim'
+Plugin 'airblade/vim-gitgutter'                                                 
+Plugin 'tpope/vim-endwise'                                                      
+Plugin 'tpope/vim-rails'                                                        
+Plugin 'tpope/vim-fugitive'                                                     
+Plugin 'vim-airline/vim-airline'                                                
+Plugin 'vim-airline/vim-airline-themes' 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -70,9 +63,6 @@ let g:airline_theme='bubblegum'
 set noswapfile
 set autoread
 
-" User alias
-" command Reload! bufdo e
-
 " Multiple buffers
 set hidden
 set runtimepath^=~/.vim/bundle/ag
@@ -90,6 +80,4 @@ function! FzyCommand(choice_command, vim_command)
   endif
 endfunction
 
-nnoremap <leader>e :call FzyCommand("ag . --silent -l -g ''", ":e")<cr>
-nnoremap <leader>v :call FzyCommand("ag . --silent -l -g ''", ":vs")<cr>
-nnoremap <leader>s :call FzyCommand("ag . --silent -l -g ''", ":sp")<cr>
+nnoremap <C-p> :call FzyCommand("ag . --silent -l -g ''", ":e")<cr>
